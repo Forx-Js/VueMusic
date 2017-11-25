@@ -2,7 +2,7 @@
   <div class="">
     <div class="searchM">
       <div class="homeImg">
-        <img src="assets/img/timg.png" alt="">
+        <img src="src/assets/img/timg.png" alt="">
       </div>
       <el-input placeholder="请输入音乐/歌手" v-model="search" :trigger-on-focus="false" @focus="toMusic">
         <template slot="prepend">Forx Music</template>
