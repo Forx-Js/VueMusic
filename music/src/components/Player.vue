@@ -1,6 +1,6 @@
 <template>
   <div class="cc">
-    <video id="player" :loop="getList.length==1"></video>
+    <audio id="player" :loop="getList.length==1"></audio>
     <transition name="plays" v-if="nowMusic">
       <div class="player">
         <div class="playerimg">
