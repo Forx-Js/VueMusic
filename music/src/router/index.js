@@ -16,7 +16,7 @@ Vue.use(ElementUI)
 console.log(__dirname)
 export default new Router({
   mode: 'history',
-  base: __dirname,
+  base: 'dist',
   // 默认滚动
   scrollBehavior (to, from, savedPosition) {
     // return 期望滚动到哪个的位置
