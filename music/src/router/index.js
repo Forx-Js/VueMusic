@@ -13,9 +13,15 @@ import Resource from 'vue-resource'
 Vue.use(Resource)
 Vue.use(Router)
 Vue.use(ElementUI)
-
+console.log(__dirname)
 export default new Router({
   mode: 'history',
+  base: __dirname,
+  // 默认滚动
+  scrollBehavior (to, from, savedPosition) {
+    // return 期望滚动到哪个的位置
+    return { x: 0, y: 0 }
+  },
   routes: [
     // 排行榜
     {
@@ -34,23 +40,29 @@ export default new Router({
       path: '/singer',
       name: 'singer',
       component: singer
+      // children: [
+      //   {
+      //     path: ':page/:id',
+      //     name: 'singerPage',
+      //     component: singerPage
+      //   }
+      // ]
     },
     // 歌手页面
     {
       path: '/singer/:id/:page',
-      // alias: '/singer/:id/:page0',
       name: 'singerPage',
       component: singerPage
     },
     // 主页
-    {
-      path: '*',
-      name: 'home',
-      component: home
-    },
+    // {
+    //   path: '',
+    //   name: 'home',
+    //   component: home
+    // },
     // 主页
     {
-      path: '*',
+      path: '/*',
       name: 'home',
       component: home
     },

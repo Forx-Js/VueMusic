@@ -1,6 +1,6 @@
 <template>
   <div class="cc">
-    <video id="player"></video>
+    <video id="player" :loop="getList.length==1"></video>
     <transition name="plays" v-if="nowMusic">
       <div class="player">
         <div class="playerimg">
@@ -138,13 +138,25 @@
         let time = _this.dom.currentTime
         _this.Minfo.nowdate = time
       }
+      dom.onerror = () => {
+        this.$message({
+          // type: 'error',
+          message: '加载失败了'
+        })
+        this.nextMusic()
+      }
     },
     computed: {
+      // 获取正在播放的曲目
       nowPlay () {
         return this.$store.state.nowPlay
       },
+      // 获取设置
       playerSet () {
         return this.$store.state.playerSet
+      },
+      getList () {
+        return this.$store.state.Mlist
       }
     },
     watch: {

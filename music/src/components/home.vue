@@ -2,9 +2,10 @@
   <div class="">
     <div class="searchM">
       <div class="homeImg">
-        <img src="src/assets/img/timg.png" alt="">
+        <img src="/static/img/timg.bc25f84.png" alt="">
+        <!-- <img :src="img" alt=""> -->
       </div>
-      <el-input placeholder="请输入音乐/歌手" v-model="search" :trigger-on-focus="false" @focus="toMusic">
+      <el-input placeholder="请输入音乐/歌手" v-model="search" :trigger-on-focus="false" @focus="toMusic" >
         <template slot="prepend">Forx Music</template>
       </el-input>
 
@@ -28,16 +29,20 @@
         </div>
       </div>
     </div>
+    <!-- {{img}} -->
   </div>
 </template>
 
 <script>
+  // import img from '@/assets/img/timg.png'
+  // console.log(img)
   export default {
     name: 'Mrote',
     data () {
       return {
         search: '周杰伦',
         backData: null
+        // img
       }
     },
     methods: {
