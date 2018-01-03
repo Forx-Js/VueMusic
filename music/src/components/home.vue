@@ -2,7 +2,7 @@
   <div class="">
     <div class="searchM">
       <div class="homeImg">
-        <img src="../assets/timg.png" alt="">
+        <img :src="img" alt="">
         <!-- <img :src="img" alt=""> -->
       </div>
       <el-input placeholder="请输入音乐/歌手" v-model="search" :trigger-on-focus="false" @focus="toMusic" >
@@ -34,15 +34,15 @@
 </template>
 
 <script>
-  // import img from '@/assets/img/timg.png'
+  import img from '@/assets/timg.png'
   // console.log(img)
   export default {
     name: 'Mrote',
     data () {
       return {
         search: '周杰伦',
-        backData: null
-        // img
+        backData: null,
+        img
       }
     },
     methods: {
