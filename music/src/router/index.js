@@ -13,10 +13,9 @@ import Resource from 'vue-resource'
 Vue.use(Resource)
 Vue.use(Router)
 Vue.use(ElementUI)
-console.log(__dirname)
 export default new Router({
   mode: 'history',
-  base: 'dist',
+  base: 'music/dist',
   // 默认滚动
   scrollBehavior (to, from, savedPosition) {
     // return 期望滚动到哪个的位置
